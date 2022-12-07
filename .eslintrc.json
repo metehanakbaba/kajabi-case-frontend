@@ -1,0 +1,49 @@
+{
+  "root": true,
+  "env": {
+    "browser": true, // Enables browser globals like window and document
+    "amd": true, // Enables require() and define() as global variables as per the amd spec.
+    "node": true, // Enables Node.js global variables and Node.js scoping.
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020, // Use the latest ecmascript standard
+    "sourceType": "module", // Allows using import/export statements
+    "ecmaFeatures": {
+      "jsx": true // Enable JSX since we're using React
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "react", "react-hooks", "testing-library"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }], // To allow importing .jsx files
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "no-undefined": 2,
+    "react/jsx-uses-vars": 2,
+    "@typescript-eslint/explicit-module-boundary-types": ["error"],
+    "no-trailing-spaces": "error",
+    "no-param-reassign": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-promise-executor-return": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreStrings": true
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "@typescript-eslint/no-explicit-any": "off"
+    // add more rules here...
+  }
+}
